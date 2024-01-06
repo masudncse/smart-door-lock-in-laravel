@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('image')->nullable();
+            $table->foreignId('created_by')->nullable()->constrained('users');
             $table->tinyInteger('status')->nullable();
             $table->timestamps();
         });
