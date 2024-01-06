@@ -7,6 +7,9 @@
 import axios from 'axios';
 window.axios = axios;
 
+import * as faceapi from 'face-api.js';
+window.faceapi = faceapi;
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
