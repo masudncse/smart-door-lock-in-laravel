@@ -20,6 +20,8 @@ class DoorSeeder extends Seeder
                 'description' => 'Description 01',
                 'device_id' => '1',
                 'status' => Door::STATUS_CLOSE,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => '2',
@@ -27,6 +29,8 @@ class DoorSeeder extends Seeder
                 'description' => 'Description 02',
                 'device_id' => '2',
                 'status' => Door::STATUS_CLOSE,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
     }

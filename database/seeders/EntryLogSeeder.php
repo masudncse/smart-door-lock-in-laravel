@@ -19,18 +19,24 @@ class EntryLogSeeder extends Seeder
                 'people_id' => '1',
                 'entry_time' => now()->subDays(4),
                 'exit_time' => now()->subDays(4),
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => '2',
                 'people_id' => '1',
                 'entry_time' => now()->subDays(5),
                 'exit_time' => now()->subDays(6),
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => '3',
                 'people_id' => '2',
                 'entry_time' => now()->subDays(600),
                 'exit_time' => now()->subDays(601),
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
     }

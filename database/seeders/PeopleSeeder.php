@@ -24,6 +24,8 @@ class PeopleSeeder extends Seeder
                 'image' => 'uploads/masud.png',
                 'created_by' => '1',
                 'status' => People::STATUS_ACTIVATED,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => '2',
@@ -35,6 +37,8 @@ class PeopleSeeder extends Seeder
                 'image' => 'uploads/kawsar.png',
                 'created_by' => '1',
                 'status' => People::STATUS_DEACTIVATED,
+                'created_at' => now(),
+                'updated_at' => now(),
             ]
         ]);
     }
