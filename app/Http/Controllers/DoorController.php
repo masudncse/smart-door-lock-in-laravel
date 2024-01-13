@@ -13,7 +13,8 @@ class DoorController extends Controller
      */
     public function index()
     {
-        //
+        $doors = Door::paginate();
+        return view('door.index', compact('doors'));
     }
 
     /**
@@ -21,37 +22,13 @@ class DoorController extends Controller
      */
     public function create()
     {
-        //
+        return view('door.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreDoorRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Door $door)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Door $door)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateDoorRequest $request, Door $door)
     {
         //
     }

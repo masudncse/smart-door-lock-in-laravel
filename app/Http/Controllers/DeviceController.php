@@ -13,7 +13,8 @@ class DeviceController extends Controller
      */
     public function index()
     {
-        //
+        $devices = Device::paginate();
+        return view('device.index', compact('devices'));
     }
 
     /**
@@ -21,37 +22,13 @@ class DeviceController extends Controller
      */
     public function create()
     {
-        //
+        return view('device.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(StoreDeviceRequest $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Device $device)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Device $device)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateDeviceRequest $request, Device $device)
     {
         //
     }

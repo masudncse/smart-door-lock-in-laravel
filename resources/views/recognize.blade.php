@@ -10,7 +10,8 @@
             <div class="col-span-4">
                 <video id="webcam" width="640" height="480" autoplay></video>
                 <button id="capture">Capture Screenshot</button>
-                <canvas id="screenshot" width="640" height="480"></canvas>
+                <canvas id="screenshot" width="640" height="480" style="display: none;"></canvas>
+                <img src="" alt="img" id="capturedImage" style="display: none;">
             </div>
         </div>
     </div>
@@ -42,6 +43,10 @@
                 // Do something with the screenshot data (e.g., send it to the server)
                 const screenshotData = canvas.toDataURL('image/png');
                 console.log('Screenshot captured:', screenshotData);
+
+                let capturedImage = document.getElementById('capturedImage')
+                capturedImage.src = screenshotData
+                capturedImage.style.display = 'block';
             });
         });
     </script>
