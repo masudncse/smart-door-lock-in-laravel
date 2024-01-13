@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('entry_logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('people_id')->nullable()->constrained('people');
-            $table->timestamp('entry_time')->nullable();
-            $table->timestamp('exit_time')->nullable();
+            $table->foreignId('employee_id')->nullable()->constrained('employees');
+            $table->timestamp('log_time')->nullable();
             $table->timestamps();
         });
     }

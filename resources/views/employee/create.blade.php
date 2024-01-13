@@ -8,7 +8,7 @@
                     <h6>Add New</h6>
                 </div>
                 <div class="card-body pt-0 pb-2">
-                    <form action="/people" method="post">
+                    <form action="/employees" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
                             <div class="col-md-3 mb-3">
@@ -22,7 +22,7 @@
                             <div class="col-md-3 mb-3">
                                 <label for="designation" class="form-label">Designation</label>
                                 <select name="designation" id="designation" class="form-select">
-                                    <option selected>Select</option>
+                                    <option selected value="">Select</option>
                                     <option value="Chief Technical Office">Chief Technical Office</option>
                                     <option value="Software Engineer">Software Engineer</option>
                                     <option value="Sr. Software Engineer">Sr. Software Engineer</option>

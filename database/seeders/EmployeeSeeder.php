@@ -2,18 +2,18 @@
 
 namespace Database\Seeders;
 
-use App\Models\People;
+use App\Models\Employee;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class PeopleSeeder extends Seeder
+class EmployeeSeeder extends Seeder
 {
     /**
      * Run the database seeds.
      */
     public function run(): void
     {
-        DB::table('people')->insert([
+        DB::table('employees')->insert([
             [
                 'id' => '1',
                 'name' => 'Md. Masudul Kabir',
@@ -22,8 +22,7 @@ class PeopleSeeder extends Seeder
                 'address' => 'Nawabpur Road',
                 'phone' => '01676717945',
                 'image' => 'uploads/masud.png',
-                'created_by' => '1',
-                'status' => People::STATUS_ACTIVATED,
+                'status' => Employee::STATUS_ACTIVE,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -35,8 +34,7 @@ class PeopleSeeder extends Seeder
                 'address' => 'Moammadpur Road',
                 'phone' => '01712548889',
                 'image' => 'uploads/kawsar.png',
-                'created_by' => '1',
-                'status' => People::STATUS_DEACTIVATED,
+                'status' => Employee::STATUS_INACTIVE,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

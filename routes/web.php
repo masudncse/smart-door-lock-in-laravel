@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\DoorController;
-use App\Http\Controllers\PeopleController;
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,7 +23,7 @@ Route::get('/', function () {
 
 Route::resource('devices', DeviceController::class);
 Route::resource('doors', DoorController::class);
-Route::resource('people', PeopleController::class);
+Route::resource('employees', EmployeeController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

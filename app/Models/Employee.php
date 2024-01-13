@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class People extends Model
+class Employee extends Model
 {
     use HasFactory;
 
-    const STATUS_ACTIVATED = 1;
-    const STATUS_DEACTIVATED = 2;
+    const STATUS_ACTIVE = 1;
+    const STATUS_INACTIVE = 2;
 }

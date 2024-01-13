@@ -16,25 +16,22 @@ class EntryLogSeeder extends Seeder
         DB::table('entry_logs')->insert([
             [
                 'id' => '1',
-                'people_id' => '1',
-                'entry_time' => now()->subDays(4),
-                'exit_time' => now()->subDays(4),
+                'employee_id' => '1',
+                'log_time' => now()->subDays(4),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'id' => '2',
-                'people_id' => '1',
-                'entry_time' => now()->subDays(5),
-                'exit_time' => now()->subDays(6),
+                'employee_id' => '1',
+                'log_time' => now()->subDays(5),
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'id' => '3',
-                'people_id' => '2',
-                'entry_time' => now()->subDays(600),
-                'exit_time' => now()->subDays(601),
+                'employee_id' => '2',
+                'log_time' => now()->subDays(600),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

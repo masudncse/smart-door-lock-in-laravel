@@ -5,8 +5,8 @@
         <div class="col-12">
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between pb-0">
-                    <h6>All Peoples</h6>
-                    <a href="/people/create" class="btn btn-primary mb-0">
+                    <h6>All Employees</h6>
+                    <a href="/employees/create" class="btn btn-primary mb-0">
                         Add New
                     </a>
                 </div>
@@ -38,11 +38,11 @@
                             </thead>
                             <tbody>
 
-                            @foreach($people as $person)
+                            @foreach($employees as $employee)
                                 <tr>
                                     <td>
                                         <div class="d-flex px-2 py-1">
-                                            {{ $person->id }}
+                                            {{ $employee->id }}
                                         </div>
                                     </td>
                                     <td>
@@ -55,25 +55,25 @@
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <p class="text-xs font-weight-bold mb-0">
-                                                <h6 class="mb-0 text-sm">{{ $person->name }}</h6>
-                                                <p class="text-xs text-secondary mb-0">{{ $person->email }}</p>
-                                                <p class="text-xs text-secondary mb-0">{{ $person->designation }}</p>
+                                                <h6 class="mb-0 text-sm">{{ $employee->name }}</h6>
+                                                <p class="text-xs text-secondary mb-0">{{ $employee->email }}</p>
+                                                <p class="text-xs text-secondary mb-0">{{ $employee->designation }}</p>
                                             </div>
                                         </div>
                                     </td>
                                     <td>
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $person->address }}
+                                            {{ $employee->address }}
                                         </p>
                                     </td>
                                     <td>
                                         <p class="text-xs text-secondary mb-0">
-                                            {{ $person->phone }}
+                                            {{ $employee->phone }}
                                         </p>
                                     </td>
 
                                     <td class="align-middle text-center text-sm">
-                                        @if($person->status === \App\Models\People::STATUS_ACTIVATED)
+                                        @if($employee->status === \App\Models\Employee::STATUS_ACTIVE)
                                             <span class="badge badge-sm bg-gradient-success">Active</span>
                                         @else
                                             <span class="badge badge-sm bg-gradient-secondary">Inactive</span>
@@ -81,8 +81,8 @@
                                     </td>
                                     <td class="align-middle">
                                         <span class="text-secondary text-xs font-weight-bold">
-                                            {{ \Carbon\Carbon::parse($person->modified_at)->format('m/d/Y') }}
-                                            {{ \Carbon\Carbon::parse($person->modified_at)->diffForHumans() }}
+                                            {{ \Carbon\Carbon::parse($employee->modified_at)->format('m/d/Y') }}
+                                            {{ \Carbon\Carbon::parse($employee->modified_at)->diffForHumans() }}
                                         </span>
                                     </td>
                                     <td class="align-middle">
