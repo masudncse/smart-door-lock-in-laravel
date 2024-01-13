@@ -40,4 +40,25 @@ class DoorController extends Controller
     {
         //
     }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function checkDoorStatus(Door $door)
+    {
+        $status = $door->status == Door::STATUS_OPEN ? 'open' : 'close';
+
+        if ($status === 'open') {
+            try {
+                $door->status = Door::STATUS_CLOSE;
+                $door->update();
+            } catch (\Exception $exception) {
+                return $this->makeErrorResponse('Failed to update door status.');
+            }
+        }
+
+        return $this->makeApiSuccessResponse([
+            'status' => $status
+        ]);
+    }
 }

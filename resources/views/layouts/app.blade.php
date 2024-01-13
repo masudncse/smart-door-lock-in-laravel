@@ -23,6 +23,9 @@
     <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
     <script defer data-site="YOUR_DOMAIN_HERE" src="https://api.nepcha.com/js/nepcha-analytics.js"></script>
 
+    <!-- Styles -->
+    @yield('styles')
+
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -323,6 +326,9 @@
 <script src="{{ asset('js/core/bootstrap.min.js') }}"></script>
 
 <script src="{{ asset('js/soft-ui-dashboard.min.js?v=1.0.7') }}"></script>
+
+<!-- Scripts -->
+@yield('scripts')
 </body>
 
 </html>

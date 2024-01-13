@@ -22,6 +22,8 @@ Route::get('/', function () {
 });
 
 Route::resource('devices', DeviceController::class);
+
+Route::get('doors/{door}/status', [DoorController::class, 'checkDoorStatus'])->name('employees.checkDoorStatus');
 Route::resource('doors', DoorController::class);
 
 Route::get('employees/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employees.destroy');
