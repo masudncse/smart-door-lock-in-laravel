@@ -23,7 +23,9 @@ Route::get('/', function () {
 
 Route::resource('devices', DeviceController::class);
 Route::resource('doors', DoorController::class);
-Route::resource('employees', EmployeeController::class);
+
+Route::get('employees/{employee}/destroy', [EmployeeController::class, 'destroy'])->name('employees.destroy');
+Route::resource('employees', EmployeeController::class)->except(['destroy']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

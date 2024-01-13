@@ -11,4 +11,14 @@ class Employee extends Model
 
     const STATUS_ACTIVE = 1;
     const STATUS_INACTIVE = 2;
+
+    protected $fillable = [
+        'name',
+        'email',
+        'designation',
+        'address',
+        'phone',
+        'image',
+        'status',
+    ];
 }

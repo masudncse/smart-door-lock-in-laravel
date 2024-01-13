@@ -6,7 +6,7 @@
             <div class="card mb-4">
                 <div class="card-header d-flex justify-content-between pb-0">
                     <h6>All Employees</h6>
-                    <a href="/employees/create" class="btn btn-primary mb-0">
+                    <a href="{{ route('employees.create') }}" class="btn btn-primary mb-0">
                         Add New
                     </a>
                 </div>
@@ -48,9 +48,9 @@
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div>
-                                                <a href="{{ asset('storage/uploads/sumon.jpg') }}" target="_blank">
-                                                    <img src="{{ asset('storage/uploads/sumon.jpg') }}"
-                                                         class="avatar avatar-sm me-3" alt="user1">
+                                                <a href="{{ asset('storage/' . $employee->image) }}" target="_blank">
+                                                    <img src="{{ asset('storage/' . $employee->image) }}"
+                                                         class="avatar avatar-sm me-3" alt="{{ $employee->name }}">
                                                 </a>
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
@@ -86,12 +86,13 @@
                                         </span>
                                     </td>
                                     <td class="align-middle">
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs"
-                                           data-toggle="tooltip" data-original-title="Edit user">
+                                        <a href="{{ route('employees.edit', $employee->id) }}"
+                                           class="text-secondary font-weight-bold text-xs">
                                             Edit
                                         </a>
-                                        <a href="javascript:;" class="text-secondary font-weight-bold text-xs ms-2"
-                                           data-toggle="tooltip" data-original-title="Edit user">
+                                        <a href="{{ route('employees.destroy', $employee->id) }}"
+                                           class="text-secondary font-weight-bold text-xs ms-2"
+                                           onclick="return confirm('Are you sure?');">
                                             Delete
                                         </a>
                                     </td>
