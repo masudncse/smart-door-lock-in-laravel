@@ -13,7 +13,8 @@ class PeopleController extends Controller
      */
     public function index()
     {
-        //
+        $people = People::paginate();
+        return view('people.index', compact('people'));
     }
 
     /**
@@ -21,7 +22,7 @@ class PeopleController extends Controller
      */
     public function create()
     {
-        //
+        return view('people.create');
     }
 
     /**
@@ -29,31 +30,7 @@ class PeopleController extends Controller
      */
     public function store(StorePeopleRequest $request)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(People $people)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(People $people)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdatePeopleRequest $request, People $people)
-    {
-        //
+        return $request->all();
     }
 
     /**

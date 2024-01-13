@@ -9,6 +9,11 @@ class Device extends Model
 {
     use HasFactory;
 
-    const STATUS_ACTIVATED = 1;
-    const STATUS_DEACTIVATED = 2;
+    const STATUS_ONLINE = 1;
+    const STATUS_OFFLINE = 2;
+
+    public function door()
+    {
+        return $this->hasOne(Door::class);
+    }
 }

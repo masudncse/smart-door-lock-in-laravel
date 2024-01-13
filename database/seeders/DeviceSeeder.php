@@ -19,7 +19,7 @@ class DeviceSeeder extends Seeder
                 'id' => '1',
                 'title' => 'Device 01',
                 'description' => 'Description 01',
-                'status' => Device::STATUS_ACTIVATED,
+                'status' => Device::STATUS_ONLINE,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
@@ -27,7 +27,7 @@ class DeviceSeeder extends Seeder
                 'id' => '2',
                 'title' => 'Device 02',
                 'description' => 'Description 02',
-                'status' => Device::STATUS_DEACTIVATED,
+                'status' => Device::STATUS_OFFLINE,
                 'created_at' => now(),
                 'updated_at' => now(),
             ]

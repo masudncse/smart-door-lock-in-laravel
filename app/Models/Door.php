@@ -11,4 +11,9 @@ class Door extends Model
 
     const STATUS_OPEN = 1;
     const STATUS_CLOSE = 2;
+
+    public function device()
+    {
+        return $this->belongsTo(Device::class);
+    }
 }

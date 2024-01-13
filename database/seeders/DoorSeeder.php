@@ -19,7 +19,7 @@ class DoorSeeder extends Seeder
                 'title' => 'Door 01',
                 'description' => 'Description 01',
                 'device_id' => '1',
-                'status' => Door::STATUS_CLOSE,
+                'status' => Door::STATUS_OPEN,
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
