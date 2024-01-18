@@ -11,12 +11,12 @@
 
 @section('content')
     <div class="container">
-        <div class="row p-5">
-            <div class="col-md-7 text-center">
-                {{--<img src="{{ asset('img/door-open.png') }}" alt="open">--}}
-                <img src="{{ asset('img/door-close.png') }}" alt="close">
+        <div class="row justify-content-center p-5">
+            <div class="col-md-4 text-center">
+                <img src="{{ asset('img/door-open.png') }}" alt="open" style="display: none;" id="door-open">
+                <img src="{{ asset('img/door-close.png') }}" alt="close" style="display: inline;" id="door-close">
             </div>
-            <div class="col-md-5">
+            <div class="col-md-3">
                 <div id="mobile-frame">
                     <div class="row">
                         <div class="col-12">
@@ -41,8 +41,8 @@
 @section('scripts')
     <script>
         $(document).ready(function () {
-
-
+            /*$('#door-open').hide();
+            $('#door-close').show();*/
 
             // Init Camera
             navigator.mediaDevices.getUserMedia({video: true})
@@ -65,9 +65,23 @@
                 const imageData = canvas.toDataURL('image/png');
                 console.log(imageData);
 
+                $('#door-close').fadeOut(function () {
+                    (new Audio("{{ asset('files/door-open-sound.mp3') }}")).play();
+                    $('#door-open').fadeIn('slow');
+                });
+
                 let screenshot = document.getElementById('screenshot')
                 screenshot.src = imageData
                 screenshot.style.display = 'block';
+
+                setTimeout(() => {
+                    $('#door-open').fadeOut(function () {
+                        (new Audio("{{ asset('files/door-close-sound.mp3') }}")).play();
+                        $('#door-close').fadeIn('slow');
+
+                        screenshot.style.display = 'none';
+                    });
+                }, 5000)
             });
         });
     </script>
